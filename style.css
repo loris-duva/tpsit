@@ -1,0 +1,33 @@
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    background-color: #0e5f5b3a;
+}
+.Header1{
+    width: 80%;
+    margin: 5px 5px 5px 5px;
+    padding: 20px;
+}
+.box {
+    border: 10px solid #37615a;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #0e5f5b3a;;
+    border-radius: 30px;
+}
+.testo {
+    border: 5px solid #37615a;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #37615a3a;
+    border-radius: 30px;
+}
+.box img {
+    width: 200px;
+    height: 100px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+.box img:hover {        
+    scale: 1.2;
+}
