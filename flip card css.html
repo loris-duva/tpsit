@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 370px;
+  height: 420px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 20px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  margin: 20px;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  margin: 20px;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  margin: 20px;
+}
+
+.flip-card-back {
+  background-color: #416ec2;
+  border: 10px solid #1c3c77 ;
+  color: white;
+  transform: rotateY(180deg);
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+
+<h1>Immagine che si gira</h1>
+<h3>Passa il puntatore sopra per leggere la descrizione:</h3>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="IMG_20240927_122604.jpg" alt="Avatar" style="width:370px;height:420px;">
+    </div>
+    <div class="flip-card-back">
+        
+            <h3>Loris Duvarrini:</h3>
+          
+            Età: 16 anni
+            <p></p>
+            Istituto: Istituto Tecnico JCMAXWELL Nichelino
+            <p></p>
+            Classe: 3AINFO
+            <p></p>
+            Luogo di resideza: Nichelino (TO)
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

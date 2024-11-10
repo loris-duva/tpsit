@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <style>
+    #miobottone1 {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #3e5a8e;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        }
+
+    #miobottone1:hover {background-color: #7797d3}
+
+    #miobottone1:active {
+        background-color: #3e5a8e;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+        }
+        
+    </style>
+    <title>JS2  </title>
+</head>
+<body>
+
+<p>JS2</p>
+<p>Secondo esercizio js2 input, bottone e alert</p>
+<input type="text" name="" id="mioinput1">
+<button id="miobottone1" onclick="aprifinestra()">Cliccami!</button>
+
+
+<script>
+    function aprifinestra(){
+let i=document.getElementById("mioinput1").value 
+        alert(i);
+        
+    }
+</script>
+
+</body>
+</html>
