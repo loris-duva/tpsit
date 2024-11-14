@@ -1,6 +1,6 @@
 <html lang="en">
-<head>
-    <style>
+    <head>
+        <style>
     body{
         font-family: 'Segoe UI', Tahoma, sans-serif;
     }
@@ -42,57 +42,62 @@
         }
 
     </style>
-    <title>JS3  </title>
-</head>
-<body>
-    <div id="testo1" class="PrimoBoxHeader">
-        "Meglio aggiungere vita ai giorni
-        che non giorni alla vita."
-        <p></p>
-        -Rita Levi Montalcini
-        <button id="miobottone1" onclick="nascondiTesto('testo1')">Nascondi testo Rita Levi Montalcini</button>
-    </div>
-    
-    <div id="testo2" class="PrimoBoxHeader">
-        "Chi dice che è impossibile,
-        non dovrebbe disturbare chi
-        ce la sta facendo."
-        <p></p>
-        -Albert Einstein
-        <button id="miobottone1" onclick="nascondiTesto('testo2')">Nascondi testo Albert Einstein</button>
-    </div>
-    
-    <div id="testo3" class="PrimoBoxHeader">
-        "Un esperto è un uomo che ha fatto
-        tutti gli errori che è possibile
-        compiere in un campo molto ristretto"
-        <p></p>
-        -Niels Bohr
-        <button id="miobottone1" onclick="nascondiTesto('testo3')">Nascondi testo Niels Bohr</button>
-    </div>
+        <title>JS3 </title>
+    </head>
+    <body>
+        <div id="testo1" class="PrimoBoxHeader">
+            "Meglio aggiungere vita ai giorni
+            che non giorni alla vita."
+            <p></p>
+            -Rita Levi Montalcini
+            <button id="miobottone1" onclick="nascondiTesto('testo1')">Nascondi
+                testo Rita Levi Montalcini</button>
+        </div>
 
-    <div id="testo4" class="PrimoBoxHeader">
-        "Non dite mai nulla di notevole.
-        Sarà senz'altro sbagliato"
-        <p></p>
-        -Ernest Rutherford
-        <button id="miobottone1" onclick="nascondiTesto('testo4')">Nascondi testo Ernest Rutherford</button>
-    </div>
+        <div id="testo2" class="PrimoBoxHeader">
+            "Chi dice che è impossibile,
+            non dovrebbe disturbare chi
+            ce la sta facendo."
+            <p></p>
+            -Albert Einstein
+            <button id="miobottone1" onclick="nascondiTesto('testo2')">Nascondi
+                testo Albert Einstein</button>
+        </div>
 
-    <div id="testo5" class="PrimoBoxHeader">
-        "Le meravigle del passato sono
-        oggi delle manifestazioni consuete"
-        <p></p>
-        -Nikola Tesla
-        <button id="miobottone1" onclick="nascondiTesto('testo5')">Nascondi testo Nikola Tesla</button>
-    </div>
-    
-    <script>
+        <div id="testo3" class="PrimoBoxHeader">
+            "Un esperto è un uomo che ha fatto
+            tutti gli errori che è possibile
+            compiere in un campo molto ristretto"
+            <p></p>
+            -Niels Bohr
+            <button id="miobottone1" onclick="nascondiTesto('testo3')">Nascondi
+                testo Niels Bohr</button>
+        </div>
+
+        <div id="testo4" class="PrimoBoxHeader">
+            "Non dite mai nulla di notevole.
+            Sarà senz'altro sbagliato"
+            <p></p>
+            -Ernest Rutherford
+            <button id="miobottone1" onclick="nascondiTesto('testo4')">Nascondi
+                testo Ernest Rutherford</button>
+        </div>
+
+        <div id="testo5" class="PrimoBoxHeader">
+            "Le meravigle del passato sono
+            oggi delle manifestazioni consuete"
+            <p></p>
+            -Nikola Tesla
+            <button id="miobottone1" onclick="nascondiTesto('testo5')">Nascondi
+                testo Nikola Tesla</button>
+        </div>
+
+        <script>
         function nascondiTesto(idTesto) {
             const testo = document.getElementById(idTesto);
             testo.style.display = "none";
         }
     </script>
 
-</body>
+    </body>
 </html>
