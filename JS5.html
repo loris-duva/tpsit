@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JS5 </title>
+    <link rel="stylesheet" href="style\styleJS5.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Calcolo Media</h2>
+        <label for="num1">Numero 1:</label>
+        <input type="text" id="num1">
+
+        <label for="num2">Numero 2:</label>
+        <input type="text" id="num2">
+
+        <label for="num3">Numero 3:</label>
+        <input type="text" id="num3">
+
+        <div class="result">
+            <button id="pulsante" onclick="gestisciCalcolo()">Calcola la Media</button>
+            <p id="out1" style="font-weight: bold">La media è: </p>
+        </div>
+    </div>
+
+    <script>
+        function calcolaMedia(a, b, c) {
+            return (a + b + c) / 3;
+        }
+
+        const elementOut = document.getElementById("out1");
+        function gestisciCalcolo() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const num3 = parseFloat(document.getElementById('num3').value);
+
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                document.getElementById('result').innerText = "Per favore, inserisci tutti i numeri.";
+                return;
+            }
+
+            const media = calcolaMedia(num1, num2, num3);
+
+            elementOut.innerHTML += ` ${media.toFixed(2)}`;
+        }
+    </script>
+
+
+</body>
+
+</html>
