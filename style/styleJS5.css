@@ -16,7 +16,7 @@ label {
 input[type=text] {
     margin-bottom: 10px;
     padding: 8px;
-    width: 10%;
+    width: 20%;
     box-sizing: border-box;
     border-radius: 4px;
     border: 1px solid #ccc;
