@@ -2,80 +2,14 @@
 <html lang="en">
 
 <head>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background-color: #b1bbf39c;
-        }
-
-        div {
-            justify-content: center;
-            justify-items: center;
-        }
-
-        #miobottone1 {
-            display: inline-block;
-            margin-bottom: 10px;
-            padding: 15px 25px;
-            font-size: 18px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #3e5a8e;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-        }
-
-        #miobottone1:hover {
-            background-color: #7797d3
-        }
-
-        #miobottone1:active {
-            background-color: #3e5a8e;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }
-
-        .PrimoBoxHeader {
-            width: 50%;
-            height: 20%;
-            border: 5px solid rgb(40, 50, 99);
-            padding: 20px;
-            border-radius: 15px;
-        }
-
-        button {
-            margin-top: 10px;
-        }
-
-        input[type=text] {
-            height: 50px;
-            width: 100px;
-            border: 5px solid lightblue;
-            border-radius: 15px;
-        }
-
-        input:focus {
-            background-color: rgb(219, 245, 253);
-        }
-
-        img {
-            display: flex;
-            border-radius: 40px;
-            height: 400px;
-            width: 600px;
-            margin-top: 100px;
-        }
-    </style>
+    <link rel="stylesheet" href="styleJS4.css">
     <title>JS4 </title>
 </head>
 
 <body>
-    <div>
-        <p></p>
+    <div class="container">
+        <h2>Calcolatore dislivello di un trekking </h2>
+        <br>
         <label for="partenza" style="font-weight: bold">Punto di partenza : </label>
         <input type="text" name="" id="partenza">
 
@@ -84,16 +18,16 @@
 
         <label for="arrivo" style="font-weight: bold">Punto di arrivo : </label>
         <input type="text" name="" id="arrivo">
-    </div>
 
-    <div>
-        <button id="miobottone1" onclick="calcola()">Calcola il
-            dislivello</button>
-        <p id="out1" style="font-weight: bold"> Risultato: </p>
+        <div>
+            <button id="pulsante" onclick="calcola()">Calcola il
+                dislivello</button>
+            <p id="out1" style="font-weight: bold"> Risultato: </p>
 
-        <div id="image">
-            <img src="https://gognablog.sherpa-gate.com/wp-content/uploads/2015/10/StoriaMonviso-v74-2-4.jpg"
-                alt="">
+            <div class="imgcontainer">
+                <img src="https://gognablog.sherpa-gate.com/wp-content/uploads/2015/10/StoriaMonviso-v74-2-4.jpg"
+                    alt="">
+            </div>
         </div>
 
         <script>
