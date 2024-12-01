@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesJS6.css">
+        <title>JS6 - Set Interval</title>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Numero che cresce all'infinito:</h1>
+
+        <p id="out1"></p>
+
+        <button onclick="increase()"> Aumenta la velocità</button>
+      </div>
+        <script>
+    const mioOutput=document.getElementById("out1");
+   setInterval(getTime,1000)
+   let n=0
+  function getTime(){
+    n++
+   mioOutput.innerHTML = n ;
+  }
+
+  function increase(){
+    setInterval(getTime, 100)
+
+  }
+
+
+
+</script>
+
+    </body>
+</html>
