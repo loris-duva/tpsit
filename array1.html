@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Analisi Numerica array1</title>
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <style>body{font-family: 'Open Sans';}</style>
+    </head>
+    <body>
+        <h1>Analisi numerica array1</h1>
+        <h3>Imparo ad usare gli array con i numeri</h3>
+        <p>Sviluppo algoritmi che inseriscono numeri particolari negli array</p>
+
+        <h3>Stampa 100 i numeri casuali tra 1 e 100 in un array:</h3>
+        <p id="out1"></p>
+        <h3>Stampa 100 numeri consecutivi tra 1 e 1000:</h3>
+        <p id="out2"></p>
+        <h3>Inserisci dentro un array 10 numeri primi casuali:</h3>
+        <p id="out3"></p>
+        <h3>Inserisci in un array i numeri primi tra 1 e 100:</h3>
+        <p id="out4"></p>
+        <h3>Stampa i numeri da 1 a 100 con accanto i loro fattori:</h3>
+        <p id="out5"></p>
+
+        <script>
+        let numeriCasuali=[];
+        function InserisciNumeroCasuale(i) { 
+            let numeroCasuale=Math.floor(Math.random()*100);
+            numeriCasuali[i]=numeroCasuale;
+        }   
+
+
+        for(let i=0;i<100;i++) {
+            InserisciNumeroCasuale(i);
+        }
+        document.getElementById("out1").innerHTML=numeriCasuali;
+
+
+        let numeriConsecutivi=[];
+        let n = 1;
+        function InserisciNumeroConsecutivo(i) { 
+            let numeroConsecutivo=n++
+            numeriConsecutivi[i]=numeroConsecutivo; 
+        }   
+        for(let i=0;i<100;i++) {
+            InserisciNumeroConsecutivo(i);
+        }
+        document.getElementById("out2").innerHTML=numeriConsecutivi;
+
+        let numeriPrimi=[];
+        function IsPRIME(n) {
+            let IsPRIME=true;
+            for(let i=2;i<(n/2);i++)
+                {
+                    if((n%i)==0)
+                        {
+                            IsPRIME=false;
+                        }
+                }
+                return IsPRIME;
+        }
+
+        function print10PRIME() {
+            while (numeriPrimi.length < 10){
+                let numeroCasuale=Math.floor(Math.random()*100);
+                if(IsPRIME(numeroCasuale)) {
+                    numeriPrimi.push(numeroCasuale)
+                }
+            }
+            document.getElementById("out3").innerHTML=numeriPrimi;
+        }
+        print10PRIME();
+
+        function print100PRIME() {
+            for (let i=0;i<100;i++) {
+                if(IsPRIME(i)) {
+                    numeriPrimi.push(i)
+                }
+            }
+            document.getElementById("out4").innerHTML=numeriPrimi;
+        }
+        print100PRIME();
+
+        function Fattori(n) {
+            let fattori=[];
+            for (let i=1;i<=n;i++) {
+                if (n%i===0) {
+                    fattori.push(i); 
+                }
+            }
+            return fattori;
+        }
+
+        let output_fattori="";
+        for (let i=1;i<=100;i++) {
+            let fattori=Fattori(i)
+            output_fattori+= "I fattori di " + i + ", sono i seguenti: " + fattori
+            + "<br>";
+        }
+
+        document.getElementById("out5").innerHTML=output_fattori;
+        
+
+
+console.log("7 è primo? "+IsPRIME(7));
+console.log("50 è primo? "+IsPRIME(50));
+console.log("2 è primo? "+IsPRIME(2));
+console.log("3 è primo? "+IsPRIME(3));
+
+    </script>
+
+    </body>
+</html>
