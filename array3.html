@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Array 3</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <style>
+    .cell {
+        border: 1px solid #ddd;
+        text-align: center;
+        padding: 10px;
+        background-color: #f8f9fa;
+        font-size: 14px;
+    }
+    .cell:hover {
+        background-color: #e9ecef;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr); /* 10 colonne */
+        gap: 1px; /* Spazio tra le celle */
+    }
+    #red {
+        color: red;
+    }
+  </style>
+    </head>
+    <body>
+        <div class="container my-4">
+            <h1 class="text-center mb-4">Numeri primi rossi, da 1 a 1000</h1>
+            <div class="grid-container">
+                <script>
+            function isPrime(num) {
+            if (num <= 1) return true;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+            }
+            
+            for (let i = 1; i <= 1000; i++) {
+                if (isPrime(i)) {
+                    document.write('<div id="red" class="cell">' + i + '</div>');
+                }
+                else {
+                    document.write('<div class="cell">' + i + '</div>');
+                }
+            }
+          </script>
+            </div>
+        </div>
+        <script>
+        function isMultipleof(n,m){
+            // n[int] : controllo che sia multiplo di n
+            // m
+            if(n % m === 0){
+                return true
+            }
+            return false
+        }
+        
+        console.log("E' 6 multiplo di 7? " + isMultipleof(6,7))
+        console.log("E' 14 multiplo di 7? " + isMultipleof(14,7))
+        console.log("E' 25 multiplo di 5? " + isMultipleof(25,5))
+    </script>
+    </body>
+</html>
