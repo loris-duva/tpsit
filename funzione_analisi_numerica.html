@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzione di analisi numerica</title>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="prime.ico">
+    <style>body{font-family: 'Open Sans';}</style>
+
+    <style>
+        #red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Funzione di analisi:</h1>
+
+    <script>
+
+        function isPRIME(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function getNumber(num) {
+
+            let pari_dispari = "";
+            let num_primi = "";
+            let output = "";
+
+            const doppio = num * 2;
+            let stringa_doppio = `Doppio: ${doppio}; `;
+            const metà_intera = Math.floor(num / 2);
+            let stringa_metà_intera = `Metà intera: ${metà_intera}; `;
+            const complemento = 1000 - num
+            let stringa_complemento = `Complemento: ${complemento}; `;
+            const somma = num + num + 1 + num - 1
+            let stringa_somma = `Somma del numero con il suo precedente e successivo: ${somma}; `;
+            const pi_greco = (num * 3.14).toFixed(2) 
+            let stringa_pi_greco = `Numero moltiplicato per 3,14: ${pi_greco}; `;
+            const due_settantuno = (num * 2.71).toFixed(2) 
+            let stringa_due_settantuno = `Numero moltiplicato per 2,71: ${due_settantuno}; `;
+
+            if (num % 2 == 0) {
+                pari_dispari = `E' pari o dispari? pari; `;
+            }
+            else {
+                pari_dispari = `E' pari o dispari? dispari; `;
+            }
+            if (isPRIME(num)) {
+                num_primi = `E' un numero primo; `;
+            }
+            else {
+                num_primi = `Non è un numero primo; `;
+            }
+
+            if (isPRIME(num)) {
+                output = `<span id="red">${num}: ${pari_dispari + num_primi + stringa_doppio + stringa_metà_intera + stringa_complemento + stringa_somma + stringa_pi_greco + stringa_due_settantuno} </br></span>`;
+            }
+            else {
+                output = `<span>${num}: ${pari_dispari + num_primi + stringa_doppio + stringa_metà_intera + stringa_complemento + stringa_somma + stringa_pi_greco + stringa_due_settantuno} </br></span> `;
+            }
+
+        return output;
+        }
+
+        function main() {
+            for (let i = 0; i < 10001; i++) {
+                document.write(getNumber(i) + "<br>");
+        }
+    }
+
+    main();
+
+        
+
+    </script>
+</body>
+</html>
