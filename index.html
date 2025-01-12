@@ -1,98 +1,322 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Index Personale</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
-        <style>
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-}
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.topnav a.active {
-    background-color: #40b9ff;
-    color: white;
-}
-
-.topnav .icon {
-    display: none;
-}
-
-@media screen and (max-width: 600px) {
-.topnav a:not(:first-child) {display: none;}
-.topnav a.icon {
-    float: right;
-    display: block;
-}
-}
-
-@media screen and (max-width: 600px) {
-.topnav.responsive {position: relative;}
-.topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-.topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-}
-}
-</style>
-    </head>
-    <body>
-
-        <div class="topnav" id="myTopnav">
-            <a href="https://loris-duva.github.io/tpsit/"
-                class="active">HOME</a>
-            <a href="https://loris-duva.github.io/tpsit/news.html"> NEWS</a>
-            <a
-                href="https://loris-duva.github.io/tpsit/link_esercizi.html">ESERCIZI
-                HTML/CSS</a>
-            <a
-                href="https://loris-duva.github.io/tpsit/link_eserciziJS.html">ESERCIZI
-                JAVASCRIPT</a>
-            <a
-                href="https://loris-duva.github.io/tpsit/Scheda%20Personale%20-%20Loris%20Duvarrini.html">SCHEDA
-                PERSONALE</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu Personale</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="index_2.0/html-5.png" alt="Logo" width="30" height="24"
+            class="d-inline-block align-text-top">
+          Indice
+        </a>
+      </div>
+    </nav>
+    <div class="container my-5 text-center" style="max-width: 580px;">
+      <h1>Loris Duvarrini</h1>
+      <p class="lead">Pagina indice per i collegamenti ai vari progetti</p>
+    </div>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <img src="index_2.0/html_card.png" height="175" width="400"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Esercizi HTML</h5>
+              <p class="card-text">Qui potete trovare i miei esercizi svolti in
+                HTML.</p>
+              <a href="#html"
+                class="btn btn-primary">Vai agli esercizi!</a>
+            </div>
+          </div>
         </div>
-
-        <div style="padding-left:16px">
-            <h2>Loris Duvarrini</h2>
-            <p>Questo sito è un mio indice personale.</p>
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <img src="index_2.0/css3-html51661.png" height="175" width="400"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Esercizi CSS</h5>
+              <p class="card-text">Qui potete trovare i miei esercizi svolti in
+                HTML con una grafica CSS.</p>
+              <a href="#css"
+                class="btn btn-primary">Vai agli esercizi!</a>
+            </div>
+          </div>
         </div>
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <img src="index_2.0/html-css-js.png" height="150" width="400"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Esercizi JavaScript</h5>
+              <p class="card-text">Qui potete trovare i miei esercizi svolti in
+                HTML con degli script scritti in JavaScript.</p>
+              <a href="#javascript"
+                class="btn btn-primary">Vai agli esercizi!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <img src="index_2.0/bootstrap5.png" height="175" width="400"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Esercizi Bootstrap</h5>
+              <p class="card-text">Qui potete trovare i miei esercizi svolti con
+                l'utlizzo di Bootstrap.</p>
+              <a href="#bootstrap"
+                class="btn btn-primary">Vai agli esercizi!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+      <section id="html" class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">Esercizi HTML</h2>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- Card 1 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Prima pagina HTML</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/primapagina.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Scheda Personale</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/Scheda%20Personale%20-%20Loris%20Duvarrini.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="css" class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">Esercizi CSS</h2>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- Card 1 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">5 box colorate</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/div%20e%20css.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">5 box con testi</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/box%20con%20testi%20di%20persone%20famose.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Flip Card</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/flip%20card%20css.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="javascript" class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">Esercizi JavaScript</h2>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- Card 1 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">JS1</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/JS1.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">JS2</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/JS2.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">JS3</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/JS3.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">JS4</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/JS4.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">JS5</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/JS5.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">JS6</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/JS6.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Array 1</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/array1.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Array 2</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/array2.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 9 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Arra 3</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/array3.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 10 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Morra-BOT</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/morra_bot.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 11 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Analisi di un numero</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/verifica_simulazione.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card 12 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Funzione analisi numerica</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/funzione_analisi_numerica.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="bootstrap" class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">Esercizi Boostrap</h2>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- Card 1 -->
+            <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Fullstak Sushi</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/sushi_boostrap.html"
+                    class="btn btn-primary">Esercizio</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
-
-    </body>
-</html>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    </html>
