@@ -1,7 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
     margin: 0;
-    background-color: #0e5f5b3a;
+    background-color: #d2e6e53a;
 }
 
 .Header1 {
@@ -14,7 +14,7 @@ body {
     border: 10px solid #37615a;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: #0e5f5b3a;
+    background-color: #2f66633a;
     ;
     border-radius: 30px;
 }
