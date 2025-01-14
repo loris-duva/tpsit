@@ -9,12 +9,34 @@
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous">
+    <style>
+      .button {
+        color: #090909;
+        padding: 0.7em 1.7em;
+        border-radius: 0.5em;
+        background: #e3f2fd;
+        cursor: pointer;
+        border: 1px solid #e3f2fd;
+        transition: all 0.3s;
+        box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+        text-decoration: none; 
+      }
+
+      .button:hover {
+        border: 1px solid white;
+      }
+
+      .button:active {
+        box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+      }
+
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar sticky-top" style="background-color: #e3f2fd;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="index_2.0/html-5.png" alt="Logo" width="30" height="24"
+          <img src="index_2.0/logo.png" alt="Logo" width="30" height="28"
             class="d-inline-block align-text-top">
         </a>
       </div>
@@ -26,290 +48,290 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img src="index_2.0/html_card.png" height="175" width="400"
+          <div class="card" style="width: 18rem; padding: 10px;">
+            <img src="index_2.0/html.png"
               class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-body" style="padding-bottom: 43px;">
               <h5 class="card-title">Esercizi HTML</h5>
               <p class="card-text">Qui potete trovare i miei esercizi svolti in
                 HTML.</p>
               <a href="#html"
-                class="btn btn-primary">Vai agli esercizi!</a>
+                class="button">Vai agli esercizi!</a>
             </div>
           </div>
         </div>
         <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img src="index_2.0/css3-html51661.png" height="175" width="400"
+          <div class="card" style="width: 18rem; padding: 15px;">
+            <img src="index_2.0/css.png" 
               class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Esercizi CSS</h5>
               <p class="card-text">Qui potete trovare i miei esercizi svolti in
                 HTML con una grafica CSS.</p>
               <a href="#css"
-                class="btn btn-primary">Vai agli esercizi!</a>
+                class="button">Vai agli esercizi!</a>
             </div>
           </div>
         </div>
         <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img src="index_2.0/html-css-js.png" height="150" width="400"
+          <div class="card" style="width: 18rem; padding: 10px;">
+            <img src="index_2.0/javascript.png"
               class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-body" style="padding-bottom: 20px;">
               <h5 class="card-title">Esercizi JavaScript</h5>
               <p class="card-text">Qui potete trovare i miei esercizi svolti in
                 HTML con degli script scritti in JavaScript.</p>
               <a href="#javascript"
-                class="btn btn-primary">Vai agli esercizi!</a>
+                class="button">Vai agli esercizi!</a>
             </div>
           </div>
         </div>
         <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img src="index_2.0/bootstrap5.png" height="175" width="400"
+          <div class="card" style="width: 18rem; padding: 10px; width: 150; height: 400;">
+            <img src="index_2.0/bootstrap.png"
               class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-body" style="padding-bottom: 44px;">
               <h5 class="card-title">Esercizi Bootstrap</h5>
               <p class="card-text">Qui potete trovare i miei esercizi svolti con
                 l'utlizzo di Bootstrap.</p>
               <a href="#bootstrap"
-                class="btn btn-primary">Vai agli esercizi!</a>
+                class="button">Vai agli esercizi!</a>
             </div>
           </div>
         </div>
       </div>
       <div>
-      <section id="html" class="py-5">
+      <section id="html" class="py-5" style="margin-top:300px;">
         <div class="container">
           <h2 class="text-center mb-4">Esercizi HTML</h2>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
             <!-- Card 1 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Prima pagina HTML</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/primapagina.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 2 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Scheda Personale</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/Scheda%20Personale%20-%20Loris%20Duvarrini.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="css" class="py-5">
+      <section id="css" class="py-5" style="margin-top:300px;">
         <div class="container">
           <h2 class="text-center mb-4">Esercizi CSS</h2>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
             <!-- Card 1 -->
             <div class="col-sm">
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Notizie catastrofiche sul mondo informatico</h5>
-                    <p></p>
-                    <a href="https://loris-duva.github.io/tpsit/news.html"
-                      class="btn btn-primary">Esercizio</a>
-                  </div>
+              <div class="card" style="width: 18rem; padding: 10px;">
+                <div class="card-body">
+                  <h5 class="card-title">Notizie catastrofiche sul mondo informatico</h5>
+                  <p></p>
+                  <a href="https://loris-duva.github.io/tpsit/news.html"
+                    class="button">Esercizio</a>
                 </div>
               </div>
+            </div>
             <!-- Card 2 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">5 box con testi</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/box%20con%20testi%20di%20persone%20famose.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 3 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Flip Card</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/flip%20card%20css.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 4 -->
             <div class="col-sm">
-                <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                   <div class="card-body">
                     <h5 class="card-title">5 box colorate</h5>
                     <p></p>
                     <a href="https://loris-duva.github.io/tpsit/div%20e%20css.html"
-                      class="btn btn-primary">Esercizio</a>
+                      class="button">Esercizio</a>
                   </div>
                 </div>
               </div>
           </div>
         </div>
       </section>
-      <section id="javascript" class="py-5">
+      <section id="javascript" class="py-5" style="margin-top:300px;">
         <div class="container">
           <h2 class="text-center mb-4">Esercizi JavaScript</h2>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
             <!-- Card 1 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">JS1</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/JS1.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 2 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">JS2</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/JS2.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 3 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">JS3</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/JS3.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 4 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">JS4</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/JS4.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 5 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">JS5</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/JS5.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 6 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">JS6</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/JS6.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 7 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Array 1</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/array1.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 8 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Array 2</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/array2.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 9 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Array 3</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/array3.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 10 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Morra-BOT</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/morra_bot.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 11 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Analisi di un numero</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/verifica_simulazione.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
             <!-- Card 12 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Funzione analisi numerica</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/funzione_analisi_numerica.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="bootstrap" class="py-5">
+      <section id="bootstrap" class="py-5" style="margin-top:300px;">
         <div class="container">
           <h2 class="text-center mb-4">Esercizi Boostrap</h2>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
             <!-- Card 1 -->
             <div class="col-sm">
-              <div class="card" style="width: 18rem;">
+              <div class="card" style="width: 18rem; padding: 10px;">
                 <div class="card-body">
                   <h5 class="card-title">Fullstak Sushi</h5>
                   <p></p>
                   <a href="https://loris-duva.github.io/tpsit/sushi_bootstrap.html"
-                    class="btn btn-primary">Esercizio</a>
+                    class="button">Esercizio</a>
                 </div>
               </div>
             </div>
