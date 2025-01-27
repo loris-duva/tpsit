@@ -1,0 +1,19 @@
+body {
+   padding-top:105px;
+}
+
+.navbar-brand,
+.navbar-nav > li > a {
+   height:80px;
+   line-height:50px;
+}
+
+container{
+   margin-top:100px;
+}
+
+.carousel-inner > ,item {
+   min-height:600px;
+   background-size:cover;
+   background-position: center center;
+}
