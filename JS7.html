@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsanti tracciati</title>
+    <script>
+      let firstClickTime = null;
+      let timeDifferences = [];
+
+      function showDateTime(buttonIndex) {
+          const currentTime = new Date();
+          const dateTime = currentTime.toLocaleString();
+          document.getElementById("output").innerHTML = `Pulsante ${buttonIndex} premuto: ${dateTime}`;
+
+          if (firstClickTime === null) {
+              firstClickTime = currentTime;
+          } else {
+              const timeDifference = currentTime - firstClickTime;
+              const seconds = Math.floor(timeDifference / 1000);
+              const milliseconds = timeDifference % 1000;
+              const deciseconds = Math.floor(milliseconds / 100);
+              const centiseconds = Math.floor(milliseconds / 10) % 10;
+              const millisecondsOnly = milliseconds % 10;
+
+              document.getElementById("output").innerHTML += `<br>Tempo trascorso dal primo click: ${seconds}.${deciseconds}${centiseconds}${millisecondsOnly} secondi`;
+          }
+      }
+  </script>
+</head>
+<body>
+  <h1>Premi uno dei pulsanti</h1>
+
+  <button onclick="showDateTime(1)">Pulsante 1</button>
+  <button onclick="showDateTime(2)">Pulsante 2</button>
+  <button onclick="showDateTime(3)">Pulsante 3</button>
+  <button onclick="showDateTime(4)">Pulsante 4</button>
+
+  <div id="output"></div>
+
+  <script>
+      setInterval(() => {
+          console.log("Differenze di tempo tra il primo click e gli altri:", timeDifferences);
+      }, 1000);
+  </script>
+</body>
+</html>
