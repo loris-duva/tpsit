@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Sequenziale</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #ffffff, #fbca1f);
+            font-family: Lucida, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            width: 270px;
+            margin: 20px auto;
+        }
+        .grid button {
+            width: 80px;
+            height: 80px;
+            font-size: 24px;
+            border-radius: 10px;
+        }
+        .active {
+            background-color: #ffc107;
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Memory Sequenziale</h1>
+        <button id="start-btn" class="btn btn-warning mb-3">Inizia Gioco</button>
+        <div id="score" class="mb-3">Punteggio: 0</div>
+        <div id="game-message" class="mb-3"></div>
+        <div id="grid" class="grid"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('grid');
+            const startButton = document.getElementById('start-btn');
+            const scoreDisplay = document.getElementById('score');
+            const gameMessage = document.getElementById('game-message');
+            const gridSize = 3;
+            let sequence = [], userInput = [], score = 0, gameActive = false;
+
+            function createGrid() {
+                grid.innerHTML = '';
+                for (let i = 0; i < gridSize * gridSize; i++) {
+                    const button = document.createElement('button');
+                    button.classList.add('btn', 'btn-light');
+                    button.dataset.index = i;
+                    button.addEventListener('click', handleUserClick);
+                    grid.appendChild(button);
+                }
+            }
+
+            function startGame() {
+                score = 0;
+                sequence = [];
+                userInput = [];
+                gameMessage.textContent = '';
+                scoreDisplay.textContent = `Punteggio: ${score}`;
+                gameActive = true;
+                nextTurn();
+            }
+
+            function nextTurn() {
+                userInput = [];
+                sequence.push(Math.floor(Math.random() * gridSize * gridSize));
+                playSequence();
+            }
+
+            function playSequence() {
+                let i = 0;
+                const interval = setInterval(() => {
+                    const button = grid.children[sequence[i]];
+                    button.classList.add('active');
+                    setTimeout(() => button.classList.remove('active'), 500);
+                    i++;
+                    if (i === sequence.length) clearInterval(interval);
+                }, 1000);
+            }
+
+            function handleUserClick(event) {
+                if (!gameActive) return;
+                const index = parseInt(event.target.dataset.index);
+                userInput.push(index);
+                event.target.classList.add('active');
+                setTimeout(() => event.target.classList.remove('active'), 500);
+                checkUserInput();
+            }
+
+            function checkUserInput() {
+                if (userInput[userInput.length - 1] !== sequence[userInput.length - 1]) {
+                    gameMessage.textContent = 'Hai sbagliato! Il gioco è stato resettato.';
+                    gameActive = false;
+                    return;
+                }
+                if (userInput.length === sequence.length) {
+                    scoreDisplay.textContent = `Punteggio: ${++score}`;
+                    setTimeout(nextTurn, 1000);
+                }
+            }
+
+            startButton.addEventListener('click', () => { if (!gameActive) startGame(); });
+            createGrid();
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+    <script src="js/bootstrap.min.js" ></script>
+</body>
+</html>
