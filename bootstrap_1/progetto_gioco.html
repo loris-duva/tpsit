@@ -45,21 +45,21 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const grid = document.getElementById('grid');
-            const startButton = document.getElementById('start-btn');
-            const scoreDisplay = document.getElementById('score');
-            const gameMessage = document.getElementById('game-message');
-            const gridSize = 3;
-            let sequence = [], userInput = [], score = 0, gameActive = false;
+            const grid = document.getElementById('grid'); // Seleziona la griglia
+            const startButton = document.getElementById('start-btn'); // Seleziona il bottone di avvio
+            const scoreDisplay = document.getElementById('score'); // Seleziona il punteggio
+            const gameMessage = document.getElementById('game-message'); // Seleziona il messaggio di gioco
+            const gridSize = 3; // Dimensione della griglia (3x3)
+            let sequence = [], userInput = [], score = 0, gameActive = false; // Variabili di gioco
 
             function createGrid() {
-                grid.innerHTML = '';
+                grid.innerHTML = ''; // Svuota la griglia
                 for (let i = 0; i < gridSize * gridSize; i++) {
-                    const button = document.createElement('button');
-                    button.classList.add('btn', 'btn-light');
-                    button.dataset.index = i;
-                    button.addEventListener('click', handleUserClick);
-                    grid.appendChild(button);
+                    const button = document.createElement('button'); // Crea un bottone
+                    button.classList.add('btn', 'btn-light'); // Aggiunge classi di stile
+                    button.dataset.index = i; // Assegna un indice
+                    button.addEventListener('click', handleUserClick); // Aggiunge il gestore di evento click
+                    grid.appendChild(button); // Aggiunge il bottone alla griglia
                 }
             }
 
@@ -67,55 +67,56 @@
                 score = 0;
                 sequence = [];
                 userInput = [];
-                gameMessage.textContent = '';
-                scoreDisplay.textContent = `Punteggio: ${score}`;
+                gameMessage.textContent = ''; // Cancella i messaggi precedenti
+                scoreDisplay.textContent = `Punteggio: ${score}`; // Resetta il punteggio
                 gameActive = true;
-                nextTurn();
+                nextTurn(); // Avvia il primo turno
             }
 
             function nextTurn() {
                 userInput = [];
-                sequence.push(Math.floor(Math.random() * gridSize * gridSize));
-                playSequence();
+                sequence.push(Math.floor(Math.random() * gridSize * gridSize)); // Aggiunge un numero casuale alla sequenza
+                playSequence(); // Mostra la sequenza
             }
 
             function playSequence() {
                 let i = 0;
                 const interval = setInterval(() => {
-                    const button = grid.children[sequence[i]];
-                    button.classList.add('active');
-                    setTimeout(() => button.classList.remove('active'), 500);
+                    const button = grid.children[sequence[i]]; // Seleziona il bottone corrispondente alla sequenza
+                    button.classList.add('active'); // Evidenzia il bottone
+                    setTimeout(() => button.classList.remove('active'), 500); // Rimuove l'evidenziazione dopo mezzo secondo
                     i++;
-                    if (i === sequence.length) clearInterval(interval);
+                    if (i === sequence.length) clearInterval(interval); // Ferma l'animazione alla fine della sequenza
                 }, 1000);
             }
 
             function handleUserClick(event) {
-                if (!gameActive) return;
-                const index = parseInt(event.target.dataset.index);
-                userInput.push(index);
-                event.target.classList.add('active');
-                setTimeout(() => event.target.classList.remove('active'), 500);
-                checkUserInput();
+                if (!gameActive) return; // Se il gioco non è attivo, ignora il click
+                const index = parseInt(event.target.dataset.index); // Ottiene l'indice del bottone cliccato
+                userInput.push(index); // Registra il numero nella sequenza dell'utente
+                event.target.classList.add('active'); // Evidenzia il bottone
+                setTimeout(() => event.target.classList.remove('active'), 500); // Rimuove l'evidenziazione
+                checkUserInput(); // Controlla se la scelta è corretta
             }
 
             function checkUserInput() {
-                if (userInput[userInput.length - 1] !== sequence[userInput.length - 1]) {
+                if (userInput[userInput.length - 1] !== sequence[userInput.length - 1]) { // Controlla se l'input è errato
                     gameMessage.textContent = 'Hai sbagliato! Il gioco è stato resettato.';
-                    gameActive = false;
+                    gameActive = false; // Ferma il gioco
                     return;
                 }
-                if (userInput.length === sequence.length) {
-                    scoreDisplay.textContent = `Punteggio: ${++score}`;
-                    setTimeout(nextTurn, 1000);
+                if (userInput.length === sequence.length) { // Se l'utente ha completato la sequenza
+                    scoreDisplay.textContent = `Punteggio: ${++score}`; // Incrementa il punteggio
+                    setTimeout(nextTurn, 1000); // Avvia un nuovo turno dopo un secondo
                 }
             }
 
-            startButton.addEventListener('click', () => { if (!gameActive) startGame(); });
-            createGrid();
+            startButton.addEventListener('click', () => { if (!gameActive) startGame(); }); // Avvia il gioco al click
+            createGrid(); // Crea la griglia all'avvio della pagina
         });
     </script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
-    <script src="js/bootstrap.min.js" ></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
