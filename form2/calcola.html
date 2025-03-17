@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricezione Dati</title>
+</head>
+<body>
+    <h2>Dati ricevuti:</h2>
+    <p id="output"></p>
+    <p id="output_len"></p>
+    <p id="reverse_str"></p>
+    <p id="join_str"></p>
+    <p id="sum_str"></p>
+   
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        let a = params.get("a") || "A non fornito";
+        let b = params.get("b") || "B non fornita";
+
+        function reverse_string(string) {
+            let characters = string.split("");
+            let reversed_list = characters.reverse();
+            let reversed_string = reversed_list.join("");
+            return reversed_string
+        }
+
+        function calcola_somma(stringa1, stringa2) {
+            lunghezza = stringa1.length + stringa2.length;
+            if (stringa2.length > 20) {
+                return document.getElementById("sum_str").innerHTML = `A e B unite: ${lunghezza}<br>!B è troppo lunga`;
+            }
+            else {
+                return document.getElementById("sum_str").textContent = `A e B unite: ${lunghezza}`;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("output").textContent = `A: ${a}\nB: ${b}`;
+            document.getElementById("output_len").textContent = `Lunghezza di A: ${a.length} \nLunghezza di B: ${b.length}`;
+            document.getElementById("reverse_str").textContent = `A al contrario: ${reverse_string(a)} B al contrario: ${reverse_string(b)}`
+            document.getElementById("join_str").innerHTML = `A e B unite: ${a + b}`
+            calcola_somma(a, b);
+        });
+
+    </script>
+</body>
+</html>
