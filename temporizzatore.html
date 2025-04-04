@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizzatore</title>
+</head>
+    <style>
+        #box1 {
+            background-color: blue;
+            border: 5px solid black;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        #box2 {
+            background-color: yellow;
+            border: 5px solid black;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+<body>
+
+        <div id="box1"></div>
+        <div id="box2"></div>
+
+    <script>
+
+        function movimento() {
+            var larghezzaPagina = window.innerWidth;
+            var altezzaPagina = window.innerHeight;
+
+            var box_1 = document.getElementById("box1");
+            x1 = parseInt(box_1.offsetLeft);
+            y1 = parseInt(box_1.offsetTop);
+            var box_2 = document.getElementById("box2");
+            x2 = parseInt(box_2.offsetLeft);
+            y2 = parseInt(box_2.offsetTop);
+
+            x1 = parseInt(Math.random() * (larghezzaPagina - 100));
+            y1 = parseInt(Math.random() * (altezzaPagina - 100));
+
+            x2 = parseInt(Math.random() * (larghezzaPagina - 100));
+            y2 = parseInt(Math.random() * (altezzaPagina - 100));
+
+            box_1.style.left = x1 + "px";
+            box_1.style.top = y1 + "px";
+
+            box_2.style.left = x2 + "px";
+            box_2.style.top = y2 + "px";
+
+            x_max = Math.max(x1, x2);
+            x_min = Math.min(x1, x2);
+            y_max = Math.max(y1, y2);
+            y_min = Math.min(y1, y2);
+
+            if (x_max - x_min < 100 && y_max - y_min < 100) {
+                box_1.style.backgroundColor = "red";
+                box_2.style.backgroundColor = "red";
+            } else {
+                box_1.style.backgroundColor = "blue";
+                box_2.style.backgroundColor = "yellow";
+            }
+        }
+        setInterval(movimento, 500)
+    </script>
+</body>
+</html>
