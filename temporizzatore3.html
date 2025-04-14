@@ -1,0 +1,66 @@
+<SCRIPT Language='JavaScript'>
+
+  function inizia()
+  {
+     var pos = -1;
+     var verso = 1;
+   
+     var a = Array.from(document.getElementsByName('A'));
+  
+     for (i = 0; i < a.length; i++)
+     {
+        a[i].style.backgroundColor = 'yellow';
+        a[i].style.left = (i * 60) + 10;
+     }
+   
+     setInterval(function () {
+        for (i = 0; i < a.length; i++)
+        {
+          a[i].style.backgroundColor = 'yellow';
+        } 
+        
+        pos = pos + verso;
+        
+        a[pos].style.backgroundColor = 'red';
+        if (pos === a.length - 1) {
+          a.pop();
+        }
+
+        if (pos >= a.length && verso == 1)
+           pos = -1;
+     }, 500);
+   
+  }
+
+</SCRIPT>
+  
+  <HTML>
+     <HEAD>
+     <TITLE>Temporizzatore 3</TITLE>
+     </HEAD>
+  
+     <style type="text/css">
+       
+        .miediv
+        {
+  
+           position:absolute;
+           height:50px;
+           width:50px;
+           border-width:1px;
+           border:solid black;
+           top:20px;
+        }
+  
+     </style>
+  
+     <BODY onLoad="inizia()">
+      <DIV name='A' class='miediv'></DIV>
+      <DIV name='A' class='miediv'></DIV>
+      <DIV name='A' class='miediv'></DIV>
+      <DIV name='A' class='miediv'></DIV>
+      <DIV name='A' class='miediv'></DIV>
+      <DIV name='A' class='miediv'></DIV>
+     </BODY>
+  
+  </HTML>

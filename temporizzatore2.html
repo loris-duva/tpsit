@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizzatore 2</title>
+</head>
+<style>
+    #quadrato {
+        position:absolute;
+        top:10px;
+        left:30px;
+        height:45px;
+        width:45px;
+        border-width:1px;
+        border:solid black;
+        background-color:rgb(18, 90, 0);
+    }
+</style>
+<body>
+    <div id="quadrato"></div>
+    <script>
+        let quadrato = document.getElementById('quadrato');
+        let posizioneTop = 10;
+        let posizioneLeft = 30; 
+        let direzione = 'dx'; 
+        const passo = 5;
+        const maxDx = 300;
+        const maxSotto = 300; 
+        const maxSx = 30;
+        const maxSopra = 10;
+
+        function movimento() {
+            if (direzione === 'dx') {
+                posizioneLeft += passo;
+                if (posizioneLeft >= maxDx) {
+                    direzione = 'basso';
+                }
+            } else if (direzione === 'basso') {
+                posizioneTop += passo;
+                if (posizioneTop >= maxSotto) {
+                    direzione = 'sx';
+                }
+            } else if (direzione === 'sx') {
+                posizioneLeft -= passo;
+                if (posizioneLeft <= maxSx) {
+                    direzione = 'sopra';
+                }
+            } else if (direzione === 'sopra') {
+                posizioneTop -= passo;
+                if (posizioneTop <= maxSopra) {
+                    direzione = 'dx';
+                }
+            }
+
+            quadrato.style.top = posizioneTop + 'px';
+            quadrato.style.left = posizioneLeft + 'px';
+        }
+
+        setInterval(movimento, 100);
+    </script>
+</body>
+</html>
