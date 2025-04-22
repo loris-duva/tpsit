@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generatore numeri:</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #output {
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generatore:</h1>
+    <label for="min">Minimo:</label>
+    <input type="number" id="min" value="1">
+    <label for="max">Massimo:</label>
+    <input type="number" id="max" value="100">
+    <button onclick="setInterval(generaNumeri, 500)">Genera</button>
+    <div id="output"></div>
+   
+    <script>
+
+        function generaNumeri() {
+            let numeriCasuali = [];
+            var ArrayNumeriCasuali = [];
+            const min = parseInt(document.getElementById('min').value, 10);
+            const max = parseInt(document.getElementById('max').value, 10);
+            if (isNaN(min) || isNaN(max) || min >= max) {
+                alert("Inserisci un intervallo valido.");
+                return;
+            }
+           
+            let numeri = "";
+            for (let i = 0; i < 10000; i++) {
+                let numero = Math.floor(Math.random() * (max - min + 1)) + min;
+                numeriCasuali.push(numero);
+                ArrayNumeriCasuali.push(numero);
+                if (numeriCasuali.length === 50) {
+                    let mediaNumeri = media(numeriCasuali);
+                    numeri += "\nMedia: " + mediaNumeri.toFixed(2);
+                    numeriCasuali = [];
+                }
+                numeri += numero + " ";
+                if (i % 50 === 49) numeri += "\n";
+            }
+            document.getElementById('output').textContent = numeri;
+        }
+            
+        
+        function media(numeri) {
+            let somma = 0;
+            for (let i = 0; i < numeri.length; i++) {
+                somma += numeri[i];
+            }
+            return somma / numeri.length;
+        }
+    </script>
+</body>
+</html>
