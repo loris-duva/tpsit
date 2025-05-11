@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gioco - Snake</title>
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 20px;
+    }
+    canvas {
+      background: #fff;
+      border: 2px solid #333;
+      display: block;
+      margin: 0 auto;
+    }
+    #score {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Snake</h1>
+  <canvas id="game" width="400" height="400"></canvas>
+  <div id="score">
+    Tempo: <span id="timer">0</span> s | Punteggio: <span id="points">0</span> | Record: <span id="record">0</span>
+  </div>
+
+  <script>
+
+    // Iizializzazione delle variabili che siamo andati ad usare
+    const canvas = document.getElementById("game");
+    const ctx = canvas.getContext("2d");
+
+    const gridSize = 20;
+    const tileCount = canvas.width / gridSize;
+
+    let snake = [{ x: 10, y: 10 }];
+    let apple = { x: 5, y: 5 };
+    let direction = { x: 0, y: 0 };
+    let score = 0;
+    let record = localStorage.getItem('record') || 0;
+    let timer = 0;
+    let started = false;
+    let gameInterval = null;
+    let timerInterval = null;
+
+
+    // Riga di codice che serve a salvare il punteggio "record"
+    document.getElementById("record").textContent = record;
+
+
+    // Questa parte di codice serve ad avviare il gioco alla pressione di un tasto, fa anche partire il
+    document.addEventListener("keydown", (e) => {
+      if (!started) {
+        started = true;
+        gameInterval = setInterval(gameLoop, 100);
+        timerInterval = setInterval(() => {
+          timer++;
+          document.getElementById("timer").textContent = timer;
+        }, 1000);
+      }
+
+      // Parte di codice che serve per collegare l'input delle freccette della tastiera al movimento del serpente
+      switch (e.key) {
+        case "ArrowUp": if (direction.y === 0) direction = { x: 0, y: -1 }; break;
+        case "ArrowDown": if (direction.y === 0) direction = { x: 0, y: 1 }; break;
+        case "ArrowLeft": if (direction.x === 0) direction = { x: -1, y: 0 }; break;
+        case "ArrowRight": if (direction.x === 0) direction = { x: 1, y: 0 }; break;
+      }
+    });
+
+    function gameLoop() {
+
+      // Questa riga di codice serve a muovere la testa nella casella in avanti successiva a dov'era precedentemente
+      const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+
+      // Questa parte controlla le collisioni, se il giocatore esce dalla griglia o colpisce se stesso, la partita termina
+      if (
+        head.x < 0 || head.x >= tileCount ||
+        head.y < 0 || head.y >= tileCount ||
+        snake.some(segment => segment.x === head.x && segment.y === head.y)
+      ) {
+        clearInterval(gameInterval);
+        clearInterval(timerInterval);
+        if (score > record) {
+          localStorage.setItem('record', score);
+        }
+        alert("Game Over! Ricarica la pagina per riprovare.");
+        return;
+      }
+
+      // Questa riga di codice serve a aumentare il corpo del serpente
+      snake.unshift(head);
+
+      // Qui invece si controlla se il serpente ha mangiato la mela, nel caso non si abbia mangiato la mela, 
+      // toglie l'ultima parte del corpo per lasciare la lunghezza del serpente invariata
+      if (head.x === apple.x && head.y === apple.y) {
+        score++;
+        document.getElementById("points").textContent = score;
+        placeApple();
+      } else {
+        snake.pop();
+      }
+
+      draw();
+    }
+
+    // Questa funzione crea e salva la posizione di una nuova mela, il while controlla se la mela viene generata 
+    // nello stesso punto del serpente, e ne genera una nuova finché non è all'interno del serpente
+    function placeApple() {
+      let newApple;
+      do {
+        newApple = {
+          x: Math.floor(Math.random() * tileCount),
+          y: Math.floor(Math.random() * tileCount)
+        };
+      } while (snake.some(segment => segment.x === newApple.x && segment.y === newApple.y));
+      apple = newApple;
+    }
+
+
+    // Questa funzione disegna ogni fotogramma del gioco, pulisce il canvas, disegna il serpente e la mela
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "red";
+      ctx.beginPath();
+      ctx.arc(apple.x * gridSize + gridSize/2, apple.y * gridSize + gridSize/2, gridSize/2 - 2, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "green";
+      for (let i = 0; i < snake.length; i++) {
+        const part = snake[i];
+        const x = part.x * gridSize;
+        const y = part.y * gridSize;
+        ctx.fillRect(x, y, gridSize, gridSize);
+      }
+    }
+  </script>
+</body>
+</html>
