@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trova il numero primo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #game {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .number-btn {
+      font-size: 24px;
+      padding: 20px;
+      width: 80px;
+      cursor: pointer;
+    }
+    #startBtn {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+    #results {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Premi sul numero primo</h1>
+  <h3>Premi il numero che secondo te è primo, il prima possibile</h3>
+  <button id="startBtn">Inizia il gioco</button>
+  <div id="game"></div>
+  <div id="results"></div>
+
+  <script>
+const gameDiv = document.getElementById('game');
+const startBtn = document.getElementById('startBtn');
+const resultsDiv = document.getElementById('results');
+let reactionTimes = [];
+let currentStartTime = 0;
+let gameInterval;
+let rounds = 0;
+const maxRounds = 10;
+
+function isPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+function generateNumbers() {
+  gameDiv.innerHTML = '';
+  const numbers = [];
+  let hasPrime = false;
+
+  while (numbers.length < 4) {
+    const num = Math.floor(Math.random() * 90) + 10;
+    if (!numbers.includes(num)) {
+      numbers.push(num);
+      if (isPrime(num)) hasPrime = true;
+    }
+  }
+
+  if (!hasPrime) {
+    const primes = [11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47];
+    const randomPrime = primes[Math.floor(Math.random() * primes.length)];
+    const replaceIndex = Math.floor(Math.random() * 4);
+    numbers[replaceIndex] = randomPrime;
+  }
+
+  numbers.forEach(num => {
+    const btn = document.createElement('button');
+    btn.className = 'number-btn';
+    btn.textContent = num;
+    btn.onclick = () => handleClick(num);
+    gameDiv.appendChild(btn);
+  });
+
+  currentStartTime = Date.now();
+}
+
+function handleClick(num) {
+  const reaction = Date.now() - currentStartTime;
+  if (isPrime(num)) {
+    reactionTimes.push({ time: reaction, number: num });
+    alert(`Corretto! Tempo di reazione: ${reaction} ms`);
+  } else {
+    alert("Ops! Non è un numero primo.");
+  }
+
+  if (rounds >= maxRounds) {
+    clearInterval(gameInterval);
+    showResults();
+  }
+}
+
+function showResults() {
+  gameDiv.innerHTML = '';
+  let output = "<h2>Risultati:</h2><ul>";
+  reactionTimes.forEach((entry, i) => {
+    output += `<li>Round ${i + 1}: ${entry.time} ms (numero: ${entry.number})</li>`;
+  });
+  output += "</ul>";
+  resultsDiv.innerHTML = output;
+}
+
+startBtn.onclick = () => {
+  reactionTimes = [];
+  rounds = 0;
+  resultsDiv.innerHTML = '';
+  clearInterval(gameInterval);
+  generateNumbers();
+  gameInterval = setInterval(() => {
+    if (rounds >= maxRounds) {
+      clearInterval(gameInterval);
+      showResults();
+      return;
+    }
+    generateNumbers();
+    rounds++;
+  }, 2000);
+};
+
+  </script>
+
+</body>
+</html>
